@@ -1,0 +1,16 @@
+@import '../../../assets/styles/vars';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: $text-size;
+  font-weight: 500;
+  background-color: $background-color;
+  color: #FFFFFF;
+}

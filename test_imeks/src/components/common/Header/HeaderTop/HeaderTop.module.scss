@@ -1,0 +1,88 @@
+@import '../../../../assets/styles/vars.scss';
+@import '../../../../assets/styles/main.scss';
+
+
+.header_top {
+  height: 60px;
+  border-bottom: 1px solid $line-color;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    & .contacts {
+      & > a {
+        margin-right: 10px;
+        font-size: $text-size;
+        color: $text-color;
+  
+        &:hover {
+          color: $orange-color;
+        }
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  
+    & .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      & > .link {
+        height: 100%;
+        margin-right: 10px;
+        padding: 10px 10px 10px 0;
+        border-right: 1px solid $line-color;
+        font-size: $text-size;
+        color: $text-color;
+  
+        &:hover {
+          color: $orange-color;
+        }
+  
+        &:last-child {
+          margin-right: 0;
+          padding-right: 0;
+          border-right: none;
+        }
+
+        & > .btn_login {
+          flex-direction: row-reverse;
+          margin-right: 10px;
+          padding: 5px 10px;
+          border: 1px solid $line-color;
+          border-radius: 4px;
+          background-color: transparent;
+          font-weight: 600;
+          color: $text-color;
+
+          & > svg {
+            margin-right: 10px;
+          }
+
+          &:hover {
+            border: 1px solid $orange-color;
+            color: $orange-color;
+
+            & > svg > path {
+              fill: $orange-color
+            }
+          }
+        }
+      }
+
+      & > .login {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .header_top {
+    display: none;
+  }
+}

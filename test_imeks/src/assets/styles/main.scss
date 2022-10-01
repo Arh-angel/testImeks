@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: black;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: black;
+  font-size: 20px;
+}
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.container {
+  width: calc(728px + (1280 - 728) * ((100vw - 768px) / (1920 - 768)));
+  height: 100%;
+  margin: auto;
+
+  @media(max-width: 767px) {
+    width: calc(288px + (728 - 288) * ((100vw - 320px) / (767 - 320)));
+  }
+}
+.active {
+  color: black;
+  border-bottom: 2px solid black;
+}

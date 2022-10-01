@@ -1,0 +1,37 @@
+@import '../../../assets/styles/main.scss';
+@import '../../../assets/styles/vars.scss';
+
+.footer {
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    & > .copyright {
+      & > a:hover {
+        color: $orange-color;
+      }
+    }
+
+    & > .aboutUs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > button {
+        background-color: transparent;
+        padding: 0;
+        margin-right: 20px;
+        & > svg {
+          width: 24px;
+          height: 24px;
+
+          &:hover path {
+            fill: $orange-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,15 @@
-import HeaderBottom from "./HeaderBottom";
-import HeaderTop from "./HeaderTop";
+import React from 'react';
+import HeaderBottom from './HeaderBottom';
+import HeaderTop from './HeaderTop';
 
 const Header = () => {
   console.log('Header');
 
   return (
-    <>
-      <HeaderTop />
+    <div>
+      {/* <HeaderTop /> */}
       <HeaderBottom />
-    </>
+    </div>
   );
 };
 
