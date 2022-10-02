@@ -1,6 +1,6 @@
 ## first point 
 
-`download project in your device`
+`download project in your device git clone https://github.com/Arh-angel/testImeks.git in terminal`
 
 ## second point 
 
