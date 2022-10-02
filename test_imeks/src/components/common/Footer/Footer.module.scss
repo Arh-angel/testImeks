@@ -9,6 +9,8 @@
     height: 100%;
 
     & > .copyright {
+      display: block;
+
       & > a:hover {
         color: $orange-color;
       }
@@ -33,5 +35,31 @@
         }
       }
     }
+
+    & > .copyright_mobile {
+      display: none;
+    }
+  }
+
+  @media(max-width:996px) {
+    .container {
+      flex-direction: column;
+
+      & > .copyright {
+        display: none;
+      }
+
+      & > .aboutUs {
+        & > button:last-child {
+          margin-right: 0;
+        }
+      }
+
+      & > .copyright_mobile {
+        display: block;
+        margin-top: 20px;
+      }
+    }
   }
 }
+

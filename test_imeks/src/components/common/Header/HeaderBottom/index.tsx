@@ -6,12 +6,19 @@ import style from './HeaderBottom.module.scss';
 import logo from '../../../../assets/images/logo.png';
 import SearchInput from '../../Form/Input/SearchInput';
 import Bottom from '../../Bottom';
+import Burger from '../../Burger';
+import MobileNav from '../../MobileNav';
 
 const HeaderBottom = () => {
   const [textForSearchInput, setTextForSearchInput] = useState('');
+  const [openBurger, setOpenBurger] = useState(false);
 
   const handlerSearchInput = (value:string) => {
     setTextForSearchInput(value);
+  };
+
+  const handlerOpenBurger = () => {
+    setOpenBurger(!openBurger);
   };
 
   return (
@@ -82,9 +89,12 @@ const HeaderBottom = () => {
                 <path d="M723.5 649.6C704.636 604.917 677.261 564.33 642.9 530.1C608.643 495.771 568.063 468.4 523.4 449.5C523 449.3 522.6 449.2 522.2 449C584.5 404 625 330.7 625 248C625 111 514 0 377 0C240 0 129 111 129 248C129 330.7 169.5 404 231.8 449.1C231.4 449.3 231 449.4 230.6 449.6C185.8 468.5 145.6 495.6 111.1 530.2C76.7709 564.457 49.4004 605.037 30.5 649.7C11.9322 693.425 1.91819 740.305 0.999998 787.8C0.973308 788.867 1.16051 789.929 1.55058 790.923C1.94065 791.917 2.5257 792.822 3.27124 793.587C4.01678 794.351 4.90774 794.958 5.89161 795.372C6.87549 795.787 7.93238 796 9 796H69C73.4 796 76.9 792.5 77 788.2C79 711 110 638.7 164.8 583.9C221.5 527.2 296.8 496 377 496C457.2 496 532.5 527.2 589.2 583.9C644 638.7 675 711 677 788.2C677.1 792.6 680.6 796 685 796H745C746.068 796 747.125 795.787 748.108 795.372C749.092 794.958 749.983 794.351 750.729 793.587C751.474 792.822 752.059 791.917 752.449 790.923C752.839 789.929 753.027 788.867 753 787.8C752 740 742.1 693.5 723.5 649.6V649.6ZM377 420C331.1 420 287.9 402.1 255.4 369.6C222.9 337.1 205 293.9 205 248C205 202.1 222.9 158.9 255.4 126.4C287.9 93.9 331.1 76 377 76C422.9 76 466.1 93.9 498.6 126.4C531.1 158.9 549 202.1 549 248C549 293.9 531.1 337.1 498.6 369.6C466.1 402.1 422.9 420 377 420Z" fill="#333E48" />
               </svg>} />
           </div>
+          <div role="presentation" className={style.mobileBurger} onClick={handlerOpenBurger}>
+            <Burger />
+          </div>
         </div>
         <div className={style.wrapper_bottom}>
-          <NavLink to="/" className={({ isActive }) => `${isActive ? style.active : ''}`} onClick={() => null}>Интернет магазин</NavLink>
+          <NavLink to="/store" className={({ isActive }) => `${isActive ? style.active : ''}`} onClick={() => null}>Интернет магазин</NavLink>
           <NavLink to="/products" className={({ isActive }) => `${isActive ? style.active : ''}`} onClick={() => null}>Продукция</NavLink>
           <NavLink to="/services" className={({ isActive }) => `${isActive ? style.active : ''}`} onClick={() => null}>Услуги</NavLink>
           <NavLink to="/catalogs" className={({ isActive }) => `${isActive ? style.active : ''}`} onClick={() => null}>Онлайн-каталоги</NavLink>
@@ -92,6 +102,9 @@ const HeaderBottom = () => {
           <NavLink to="/contacts" className={({ isActive }) => `${isActive ? style.active : ''}`} onClick={() => null}>Контакты</NavLink>
         </div>
       </div>
+      {openBurger && <div className={style.mobileNav}>
+        <MobileNav />
+      </div>}
     </div>
   );
 };

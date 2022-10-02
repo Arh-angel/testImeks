@@ -19,14 +19,21 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      margin-top: 20px;
 
       & > label {
+        display: block;
+
         & > input {
           background-color: transparent;
           border: 2px solid $orange-color;
           border-radius: 5px;
         }
         & > span {
+        }
+
+        @media(max-width: 996px) {
+          display: none;
         }
       }
   
@@ -57,6 +64,19 @@
           }
           
         }
+
+        @media(max-width: 996px) {
+          display: none;
+        }
+      }
+
+      & > .mobileBurger {
+        display: none;
+        
+        @media(max-width: 996px) {
+          display: block;
+          margin-top: -3px;
+        }
       }
     }
 
@@ -73,12 +93,7 @@
         justify-content: center;
         align-items: center;
         width: auto;
-        height: 40px;
-        margin-right: calc(24px + (40 - 24) * ((100vw - 768px) / (1920 - 768)));
         background-color: transparent;
-        border: 1px solid rgba(255, 255, 255, 0);
-        padding: 8px 24px 8px 24px;
-        border-radius: 35px;
         white-space: nowrap;
         font-size: 16px;
         color:  $text-color;
@@ -88,10 +103,8 @@
         }
     
         &.active {
-          border: 1px solid $orange-color;
+          border-bottom: 1px solid $orange-color;
           color:  $text-color;
-          padding: 8px 24px 8px 24px;
-          border-radius: 35px;
     
           &:hover {
             border: 1px solid $orange-color;
@@ -100,12 +113,41 @@
         }
     
         &:hover {
-          border: 1px solid $orange-color;
+          border-bottom: 1px solid $orange-color;
           color:  $orange-color;
-          padding: 8px 24px 8px 24px;
-          border-radius: 35px;
         }
+      }
+
+      @media(max-width: 996px) {
+        display: none;
       }
     }
   }
+
+  @media(max-width: 996px) {
+    height: 60px;
+    
+    .container {
+     & > .wrapper_top {
+        margin-top: 0;
+      }
+    }
+  }
+
+  & > .mobileNav {
+    display: none;
+
+    @media(max-width: 996px) {  
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      margin-top: 60px;
+      z-index: 10;
+      }
+
+
+    }
 }

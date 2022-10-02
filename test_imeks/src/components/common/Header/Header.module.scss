@@ -1,0 +1,7 @@
+.header {
+  z-index: 15;
+  
+  @media(max-width: 768px) {
+    height: 60px;
+  }
+}

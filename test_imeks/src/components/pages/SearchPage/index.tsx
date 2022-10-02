@@ -34,7 +34,7 @@ const SearchPage = () => {
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage: 6,
+    contentPerPage: 8,
     count: items.length,
   });
 
@@ -65,14 +65,12 @@ const SearchPage = () => {
         <ul className={style.productList}>
           {items.reverse().slice(firstContentIndex, lastContentIndex).map((item:any) => (
             <li className={style.productItem} key={item.id}>
+              <Link to={`/searchResults/${item.id}`} className={style.productTitle}>{item.name}</Link>
               <img className={style.imgProduct} src={item.image} alt="foto" />
-              <div className={style.aboutItem}>
-                <Link to={`/searchResults/${item.id}`} className={style.productTitle}>{item.name}</Link>
-                <p className={style.productDescription}>
-                  {item.species}
-                </p>
-                <p className={style.productDate}>{item.created}</p>
-              </div>
+              <p className={style.productDescription}>
+                {item.species}
+              </p>
+              <p className={style.productDate}>{item.created}</p>
             </li>
           ))}
         </ul>
